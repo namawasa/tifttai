@@ -870,11 +870,11 @@ export default function App() {
         data={data}
       />
 
-      {totalFav > 0 && sheetOpen && (
+      {/* {totalFav > 0 && sheetOpen && (
         <button className={"clear-link" + (confirmClear ? " confirm" : "")} onClick={clearAll}>
           <Trash2 size={12} /> {confirmClear ? "もう一度タップで削除" : "すべて削除"}
         </button>
-      )}
+      )} */}
 
       {toastMsg && <div className="toast">{toastMsg}</div>}
     </div>
