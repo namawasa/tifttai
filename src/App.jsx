@@ -207,11 +207,7 @@ function TimetableGrid({ date, data, favSet, onToggle }) {
               style={{ top: (t - minStart) * GRID_PX_PER_MIN }}
             />
           ))}
-          {showNowLine && (
-            <div className="grid-now-line" style={{ top: nowTop }}>
-              <span className="grid-now-label">{minToHHMM(nowMin)}</span>
-            </div>
-          )}
+          {showNowLine && <div className="grid-now-line" style={{ top: nowTop }} />}
           {STAGE_ORDER.map((s, colIdx) =>
             byStage[s].map((ev) => {
               const top = (toMin(ev.s) - minStart) * GRID_PX_PER_MIN;
@@ -1116,22 +1112,17 @@ button { font-family: inherit; cursor: pointer; }
 
 .grid-now-line {
   position: absolute; left: 0; right: 0; height: 0;
-  border-top: 2px solid #FF3B4E;
+  border-top: 2px solid rgba(255,59,78,0.55);
   z-index: 5; pointer-events: none;
 }
 .grid-now-line::before {
   content: ''; position: absolute; left: -4px; top: -4px;
-  width: 8px; height: 8px; border-radius: 999px; background: #FF3B4E;
+  width: 8px; height: 8px; border-radius: 999px; background: rgba(255,59,78,0.55);
   box-shadow: 0 0 0 2px #FFFFFF;
-}
-.grid-now-label {
-  position: absolute; left: 6px; top: -18px;
-  background: #FF3B4E; color: #FFFFFF; font-size: 9px; font-weight: 800;
-  padding: 1px 6px; border-radius: 999px; white-space: nowrap;
 }
 .grid-now-dot {
   position: absolute; left: 50%; transform: translate(-50%, -50%);
-  width: 8px; height: 8px; border-radius: 999px; background: #FF3B4E;
+  width: 8px; height: 8px; border-radius: 999px; background: rgba(255,59,78,0.55);
   box-shadow: 0 0 0 2px #FFFFFF; pointer-events: none;
 }
 
@@ -1195,7 +1186,7 @@ button { font-family: inherit; cursor: pointer; }
 .overlap-source-stage { font-size: 10.5px; font-weight: 800; flex-shrink: 0; }
 .overlap-source-name { font-size: 13px; font-weight: 800; color: var(--ink); }
 .sheet {
-  width: 100%; max-width: 480px; max-height: 86vh; min-height: 0;
+  width: 100%; max-width: 480px; height: 86vh; min-height: 0;
   background: var(--bg); border-radius: 24px 24px 0 0;
   border: 2px solid var(--border); border-bottom: none;
   padding: 10px 16px 24px; display: flex; flex-direction: column;
