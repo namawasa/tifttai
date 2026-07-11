@@ -488,7 +488,7 @@ function MySheet({ open, onClose, favSet, onToggle, toast, onOpenOverlap, data }
 
         <DayTabs selected={day} onSelect={setDay} />
 
-        <div className="sheet-actions">
+        {/* <div className="sheet-actions">
           <button className="share-btn" onClick={handleShare}>
             <Share2 size={16} />
             共有リンクをコピー
@@ -506,7 +506,7 @@ function MySheet({ open, onClose, favSet, onToggle, toast, onOpenOverlap, data }
               </button>
             </div>
           )}
-        </div>
+        </div> */}
 
         {conflicts.size > 0 && (
           <div className="warn-banner">
