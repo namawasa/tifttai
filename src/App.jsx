@@ -34,7 +34,7 @@ const storage = {
   async get(key) {
     try {
       if (typeof window !== "undefined" && window.localStorage) {
-        const r = await window.localStorage.get(key);
+        const r = await window.localStorage.getItem(key);
         return r ? JSON.parse(r.value) : null;
       }
     } catch (e) {
@@ -46,7 +46,7 @@ const storage = {
     memoryFallback[key] = value;
     try {
       if (typeof window !== "undefined" && window.localStorage) {
-        await window.localStorage.set(key, JSON.stringify(value));
+        await window.localStorage.setItem(key, JSON.stringify(value));
       }
     } catch (e) {
       /* ignore, memory fallback already updated */
